@@ -1202,31 +1202,37 @@ body {
 
   .title-group {
     margin-top: 41px;
-    margin-left: 0px;
+    margin-left: -24px;
+    background: hsl(0 0% 0% / 75%);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    padding: 12px 0 12px 24px;
+  }
+
+  @supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+    .title-group 
+     {background: hsl(0 0% 0% / 85%)}
   }
 
   .my-navmenu {
     left: -225px;
   }
 
-  .banner-img {
+  /* .banner-img {
     height: 100%;
-    -webkit-filter: blur(4px);
     filter: blur(4px);
-    -o-object-fit: cover;
     object-fit: cover;
-    -o-object-position: 84% 50%;
     object-position: 84% 50%;
-  }
+  } */
 
   .banner-img.img-center {
     -o-object-position: 50% 50%;
     object-position: 50% 50%;
   }
 
-  .project-banner {
+  /* .project-banner {
     height: 500px;
-  }
+  } */
 
   .project-card {
     -webkit-box-orient: vertical;

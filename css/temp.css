@@ -625,7 +625,7 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   background-color: #ffc225;
-  background-image: url("https://uploads-ssl.webflow.com/60e6faf6af5194919fda3b32/611535ada1213e6980adea8c_about-logo.svg");
+  background-image: url("/img/about-logo.svg");
   background-position: 2% 50%;
   background-size: auto;
   background-repeat: no-repeat;

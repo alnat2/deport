@@ -292,9 +292,9 @@ body {
   bottom: auto;
   max-width: 768px;
   margin: 41px 0 36px -24px;
-  background: rgb(52 68 72 / 75%);
+  background: rgb(52 68 72 / 50%);
   -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   padding: 12px 24px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -304,7 +304,7 @@ body {
   align-items: center;
 }
 
-@supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   .title-group 
    {background: rgb(0 0 0 / 85%)}
 }

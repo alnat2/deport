@@ -273,7 +273,7 @@ body {
 }
 
 .info-panel-title {
-  max-width: 720px;
+  max-width: 480px;
   margin-top: 0px;
   margin-bottom: 8px;
   font-family: Cuprum, sans-serif;
@@ -290,7 +290,7 @@ body {
   left: 56px;
   top: -132%;
   bottom: auto;
-  max-width: 768px;
+  max-width: 510px;
   margin: 41px 0 36px -24px;
   background: rgb(52 68 72 / 50%);
   -webkit-backdrop-filter: blur(20px);
@@ -757,11 +757,11 @@ body {
   }
 
   .title-group {
-    max-width: 550px;
+    max-width: 430px;
   }
 
   .info-panel-title {
-    max-width: 500px;
+    max-width: 380px;
     font-size: 32px;
   }
 
@@ -872,7 +872,7 @@ body {
   }
 
   .info-panel-title {
-    max-width: 540px;
+    max-width: 300px;
     margin-bottom: 4px;
     font-size: 24px;
   }

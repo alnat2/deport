@@ -273,7 +273,7 @@ body {
 }
 
 .info-panel-title {
-  max-width: 480px;
+  /* max-width: 480px; */
   margin-top: 0px;
   margin-bottom: 8px;
   font-family: Cuprum, sans-serif;
@@ -290,7 +290,8 @@ body {
   left: 56px;
   top: -132%;
   bottom: auto;
-  max-width: 510px;
+  width: fit-content;
+  /* max-width: 510px; */
   margin: 41px 0 36px -24px;
   background: rgb(52 68 72 / 50%);
   -webkit-backdrop-filter: blur(20px);
@@ -756,12 +757,12 @@ body {
     flex: 0 auto;
   }
 
-  .title-group {
+  /* .title-group {
     max-width: 430px;
-  }
+  } */
 
   .info-panel-title {
-    max-width: 380px;
+    /* max-width: 380px; */
     font-size: 32px;
   }
 
@@ -872,7 +873,7 @@ body {
   }
 
   .info-panel-title {
-    max-width: 300px;
+    /* max-width: 300px; */
     margin-bottom: 4px;
     font-size: 24px;
   }
@@ -1206,9 +1207,9 @@ body {
     border-top: 1px solid #c4c4c4;
   }
 
-  .title-group {
+  /* .title-group {
     max-width: 300px;
-  }
+  } */
 
   .my-navmenu {
     left: -225px;

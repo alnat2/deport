@@ -554,6 +554,7 @@ body {
 }
 
 .info-panel-subtitle {
+  min-width: 300px;
   max-width: 700px;
   font-family: Cuprum, sans-serif;
   color: #f1f1f1;

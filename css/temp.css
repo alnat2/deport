@@ -532,6 +532,11 @@ body {
   font-weight: 400;
 }
 
+.btn-link.secondary.onlight {
+  border-color: #121212;
+  color: #121212;
+}
+
 .btn-link.secondary:hover {
   background-color: #ffc225;
 }

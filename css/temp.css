@@ -294,8 +294,8 @@ body {
   /* max-width: 510px; */
   margin: 41px 0 36px -24px;
   border-radius: 2px 4px 4px 2px;
-  background: rgb(4 6 6 / 56%);
-  -webkit-backdrop-filter: blur(20px);
+  background: #ffffff25;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 12px 24px;
   -webkit-box-pack: center;

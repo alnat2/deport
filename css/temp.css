@@ -12,11 +12,13 @@
 /* ==========================================================================
    Start of custom Webflow CSS
    ========================================================================== */
-   :root {
-  --main-bg-color: #EFF1F8;
-  --container-bg-color: #ffffff;
-  --accent-color: #ffc225;
-  --accent-hover-color: #ebc661;
+:root {
+  --main-bg-color: #F3F7F8;
+  --container-bg-color: #fff;
+  --accent-color: #ffdc01;
+  --accent-hover-color: #FACC15;
+  --secondary-hover-color: #20304c;
+  --secondary-onlight-hover-color: #fff;
   --dark-text-color: #121212;
   --dark-title-color: #20304c;
   --dark-btn-color:#20304c;
@@ -25,9 +27,11 @@
   --menu-item-hover-color: #673ab7;
   --border-shadow: 0 2px 8px 0px rgb(26 33 82 / 12%);
   --header-shadow: 0 2px 4px 0px rgb(139 139 123 / 18%);
+  --title-group-onlight-shadow: 0 4px 30px rgba(146, 196, 211, 0.3);
+  --title-group-ondark-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
 
-   .w-layout-grid {
+.w-layout-grid {
   display: -ms-grid;
   display: grid;
   grid-auto-columns: 1fr;
@@ -41,7 +45,7 @@
 
 body {
   font-family: 'Jost', sans-serif;
-  color: #333;
+  color: var(--dark-text-color);
   font-size: 14px;
   line-height: 20px;
   height: 80px;
@@ -92,6 +96,11 @@ body {
   grid-template-columns: 1fr max-content max-content max-content;
   -ms-grid-rows: auto;
   grid-template-rows: auto;
+}
+
+.logo-link {
+  border-radius: 8px 0 8px;
+  background-color: var(--accent-color);
 }
 
 .nav-logo-link {
@@ -309,10 +318,12 @@ body {
   width: fit-content;
   /* max-width: 510px; */
   margin: 41px 0 36px -24px;
-  border-radius: 2px 4px 4px 2px;
-  background: #ffffff25;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  background: rgb(200 237 249 / 43%);
+  box-shadow: var(--title-group-onlight-shadow);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(202, 208, 249, 0.22);
   padding: 12px 24px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -320,6 +331,11 @@ body {
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+
+.title-group.ondark {
+  background: rgba(22, 43, 64, 0.4);
+  box-shadow: var(--title-group-ondark-shadow);
 }
 
 @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
@@ -410,7 +426,7 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: var(--main-bg-color);
+  background-color: var(--container-bg-color);
   border-radius: 0 0 12px 12px;
   box-shadow: var(--header-shadow);
 }
@@ -425,7 +441,7 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: var(--main-bg-color);
+  background-color: var(--container-bg-color);
 }
 
 .navmenu-item {
@@ -566,8 +582,12 @@ body {
   color: var(--dark-btn-color);
 }
 
+.btn-link.secondary.onlight:hover {
+  background-color: var(--secondary-onlight-hover-color);
+}
+
 .btn-link.secondary:hover {
-  background-color: var(--accent-hover-color);
+  background-color: var(--secondary-hover-color);
 }
 
 .btn-link.secondary.no-btn {
@@ -587,6 +607,7 @@ body {
   margin-bottom: 16px;
   padding: 8px;
   border-radius: 12px;
+  background-color: var(--container-bg-color);
   border: 1px solid rgba(255, 255, 255, 0.07);
   box-shadow: var(--border-shadow);
   overflow: hidden;
@@ -625,6 +646,7 @@ body {
   -webkit-flex: 0px;
   -ms-flex: 0px;
   flex: 0px;
+  background-color: var(--container-bg-color);
   box-shadow: var(--border-shadow);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -652,9 +674,7 @@ body {
   font-family: Cuprum, sans-serif;
   color: var(--dark-title-color);
   font-size: 24px;
-  line-height: 125%;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  line-height: 130%;
 }
 
 .info-group {
@@ -1058,6 +1078,7 @@ body {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    background-color: var(--accent-color);
   }
 
   .line.ltop {

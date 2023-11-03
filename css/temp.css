@@ -583,6 +583,7 @@ body {
 .btn-link.secondary.onlight {
   border-color: currentColor;
   color: var(--dark-btn-color);
+  background-color: var(--container-bg-color);
 }
 
 .btn-link.secondary.onlight:hover {

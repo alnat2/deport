@@ -323,8 +323,8 @@ body {
   border-radius: 8px;
   background: rgb(200 237 249 / 43%);
   box-shadow: var(--title-group-onlight-shadow);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border: 1px solid rgba(202, 208, 249, 0.22);
   padding: 12px 24px;
   -webkit-box-pack: center;

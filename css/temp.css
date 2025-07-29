@@ -59,17 +59,6 @@ body {
   background-color: var(--accent-color);
 }
 
-.info-panel {
-  position: absolute;
-  left: 0%;
-  top: auto;
-  right: 0%;
-  bottom: 40px;
-  height: auto;
-  padding: 0 40px;
-  background-color: transparent;
-}
-
 .btn-group {
   display: flex;
   gap: 20px;
@@ -80,29 +69,6 @@ body {
 
 .project-banner .btn-group {
   max-width: 534px;
-}
-
-.title-group {
-  position: static;
-  left: 56px;
-  top: -132%;
-  bottom: auto;
-  max-width: 534px;
-  margin: 32px 0;
-  border-radius: 8px;
-  background: var(--overlay-bg);
-  box-shadow: var(--title-group-ondark-shadow);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: 1px solid rgba(202, 208, 249, 0.22);
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-}
-
-@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-  .title-group 
-   {background: rgb(0 0 0 / 85%)}
 }
 
 .image {
@@ -193,20 +159,11 @@ body {
   font-weight: 700;
 }
 
-.banner-img {
-  opacity: 75%;
-  margin-bottom: 0px;
-}
-
-.banner-img *{
-  border-radius: 8px;
-}
-
-img {
+/* img {
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
-}
+} */
 
 .btn-link {
   display: flex;
@@ -262,18 +219,65 @@ img {
 }
 
 .main {
-  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 12px 0;
+}
+
+.main > section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .project-banner {
-  position: relative;
-  margin-bottom: 16px;
   padding: 8px;
-  border-radius: 16px;
+  aspect-ratio: 2 / 0.95;
+  display: grid;
   background-color: var(--container-bg-color);
-  border: 1px solid rgba(255, 255, 255, 0.07);
   box-shadow: var(--border-shadow);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.banner-img, .project-img {
+  width: 100%;
+  height: 100%;
+  grid-area: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
   overflow: hidden;
+}
+
+/* .banner-img *{
+  height: 550px;
+  object-fit: cover;
+  border-radius: 8px;
+} */
+
+.info-panel {
+  grid-area: 1 / 1;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  margin: 8px 28px 40px;
+}
+
+.title-group {
+  max-width: 534px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  border-radius: 8px;
+  background: var(--overlay-bg);
+  box-shadow: var(--title-group-ondark-shadow);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(202, 208, 249, 0.22);
+  padding: 12px 24px;
 }
 
 .info-panel-title {
@@ -303,7 +307,9 @@ img {
 }
 
 .project-card {
-  max-width: 592px;
+  /* width: 50%; */
+  flex: 1;
+  aspect-ratio: 2 / 1.5;
   padding: 8px;
   display: grid;
   background-color: var(--container-bg-color);
@@ -312,20 +318,27 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.project-img{
+/* .project-img{
   grid-area: 1 / 1;
   height: 420px;
   object-fit: cover;
   border-radius: 8px;
-}
+} */
 
 .project-card-title {
+  border-radius: 8px;
+  background: var(--overlay-bg);
+  box-shadow: var(--title-group-ondark-shadow);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(202, 208, 249, 0.22);
+  padding: 12px 20px;
   margin: 0px;
   font-family: var(--titlefont);
   font-weight: 550;
   color: var(--light-title-color);
   font-size: 24px;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .info-group {
@@ -334,14 +347,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border-radius: 8px;
-  background: var(--overlay-bg);
-  box-shadow: var(--title-group-ondark-shadow);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: 1px solid rgba(202, 208, 249, 0.22);
-  padding: 20px 12px 16px;
-  margin: 8px;
+  margin: 8px 28px 24px;
 }
 
 .about-banner {
@@ -484,23 +490,19 @@ img {
   flex-shrink: 0;
 }
 
-.section {
-  margin-bottom: 16px;
-}
-
-.section.section-full-height {
-  height: 100vh;
-}
-
 .card-grid {
   display: flex;
+  width: 100%;
   gap: 16px;
 }
 
 @media screen and (max-width: 991px) {
-  .info-panel {
-    padding-left: 32px;
-    bottom: 24px;
+  .info-panel, .info-group {
+    margin: 8px 20px 20px;
+  }
+
+  .info-panel-title {
+    font-size: 32px;
   }
 
   .btn-group {
@@ -508,15 +510,7 @@ img {
     align-items: stretch;
     align-content: flex-start;
     flex: 0 auto;
-    gap: 12px;
-  }
-
-  .title-group {
-    margin: 0 0 20px;
-  }
-
-  .info-panel-title {
-    font-size: 32px;
+    gap: 8px;
   }
 
   .main {
@@ -533,9 +527,16 @@ img {
     margin-right: 16px;
   }
 
+  .project-card {
+    aspect-ratio: 1 / 1.2;
+  }
+
+  .project-banner {
+    aspect-ratio: 2 / 1;
+  }
+
   .project-card-title {
-    max-width: 450px;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .about-banner {
@@ -562,7 +563,7 @@ img {
   }
 
   .info-panel {
-    padding: 0 24px;
+    gap: 12px;
   }
 
   .btn-group {
@@ -570,7 +571,7 @@ img {
   }
 
   .info-panel-title {
-    font-size: 24px;
+    font-size: 21px;
   }
 
   .nav-menu {
@@ -583,8 +584,6 @@ img {
     position: static;
     display: inline-block;
     margin-top: 0px;
-    -webkit-align-self: flex-end;
-    -ms-flex-item-align: end;
     align-self: flex-end;
   }
   .div-block-2 {
@@ -654,20 +653,20 @@ img {
     line-height: 1.3;
   }
 
-  .project-banner {
-    margin-bottom: 8px;
-  }
-
   .info-panel-subtitle {
     font-size: 14px;
   }
 
-  .info-group {
-    padding-bottom: 12px;
+  .info-group { 
+    gap: 12px;
+  }
+
+  .project-banner {
+    aspect-ratio: 2 / 1.3;
   }
 
   .project-card {
-    max-width: 50%;
+    aspect-ratio: 1 / 1.4;
   }
 
   .project-card-title {
@@ -688,8 +687,8 @@ img {
     gap: 8px;
   }
 
-  .section {
-    margin-bottom: 8px;
+  .main, .main > section {
+    gap: 8px;
   }
 
   .card-grid {
@@ -721,8 +720,17 @@ img {
     object-position: 50% 50%;
   }
 
+  .project-banner {
+      aspect-ratio: 1 / 1.3;
+  }
+
   .project-card {
-    max-width: 100%;
+    /* max-width: 100%; */
+    aspect-ratio: 1 / 1.1;
+  }
+
+  .info-panel, .info-group {
+    margin: 8px 16px 20px;
   }
 
   .item-top {
@@ -743,10 +751,5 @@ img {
 
   .card-grid {
     flex-direction: column;
-  }
-
-  .project-img {
-    height: 360px;
-    max-width: 100%;
   }
 }
